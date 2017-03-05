@@ -3,13 +3,14 @@ package main
 import (
 	"flag"
 	"os"
+
+	"github.com/newmountain/mychat/lib"
 )
 
 func main() {
 	var isHost bool
 
-	flag.BoolVar(&isHost, "listen", false, "listens on the specified IP address")
-
+	flag.BoolVar(&isHost, "listen", false, "Listens on the specified ip address")
 	flag.Parse()
 
 	if isHost {
@@ -21,4 +22,5 @@ func main() {
 		connIP := os.Args[1]
 		lib.RunGuest(connIP)
 	}
+
 }
