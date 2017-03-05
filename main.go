@@ -30,6 +30,10 @@ func main() {
 const port = "8080"
 
 func runGuest(ip string) {
+
+}
+
+func runHost(ip string) {
 	ipAndPort := ip + ":" + port
 	listener, listenErr := net.Listen("tcp", ipAndPort)
 	if listenErr != nil {
@@ -50,8 +54,4 @@ func runGuest(ip string) {
 	}
 
 	fmt.Println("Message recevied:", message)
-}
-
-func runHost(ip string) {
-
 }
